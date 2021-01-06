@@ -6,8 +6,8 @@
 
 .container {
     width: 100%;
-    margin: 50px auto;
-    text-align: center;
+    margin: 30px auto;
+    padding: 1.5rem;
 }
 
 @media (min-width: 576px) {
@@ -18,8 +18,12 @@
 
 @media (min-width: 768px) {
     .container {
-        max-width: 720px;
+        max-width: 600px;
     }
+}
+
+header {
+    text-align: center;
 }
 
 .title {
@@ -33,11 +37,14 @@
 
 .form-group {
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-control {
-    width: 60%;
-    margin-right: 0.5rem;
+    flex: 1;
+    margin-right: 0.8rem;
     min-height: 2.3rem;
     padding: 8px;
     border-radius: 7px;
@@ -63,6 +70,52 @@
     padding: 0.7rem;
     color: #f7f7f7;
     outline: none;
+}
+
+.todo {
+    margin: 1px solid #f7f7f7;
+    margin-top: 2.5rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px 5px #a0a8b9;
+    background: #606c88;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(120deg, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(120deg, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #f7f7f7;
+}
+
+.todo-list {
+    list-style: none;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-item li {
+    flex: 1;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+.completed-btn, .delete-btn {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    color: #f7f7f7;
+    
+}
+
+.completed-btn {
+    margin-right: 0.7rem;
+    background-color: #5cb85c;
+}
+
+.delete-btn {
+    background-color: #d9534f;
 }
 
 
