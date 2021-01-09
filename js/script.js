@@ -2,7 +2,6 @@ const addTodoButton = document.querySelector(".add-button");
 const todoList = document.querySelector(".todo-list");
 const inputTodo = document.querySelector(".add-todo");
 
-
 addTodoButton.addEventListener('click', (e) => {
     e.preventDefault();
     
@@ -14,8 +13,10 @@ addTodoButton.addEventListener('click', (e) => {
 
         // Create list todo
         const newTodoItem = document.createElement("li");
-        newTodoItem.innerHTML = inputTodo.value
+        newTodoItem.innerHTML = inputTodo.value;
         todoItem.appendChild(newTodoItem);
+
+        saveTodo(inputTodo.value);
 
         // Create completed button
         const completedButton = document.createElement("button");
@@ -70,9 +71,20 @@ todoList.addEventListener('click', (e) => {
         } else {
             todoItem.classList.toggle("completed");
             element.innerHTML = "Uncompleted";
-            
         }
-
-        
     }
 });
+
+const saveTodo = (todo) => {
+    let todosList;
+
+    if(localStorage.getItem('todos') === null) {
+        todosList = [];
+    } else {
+        todosList = JSON.parse(localStorage.getItem("todos"));
+    }
+
+    todosList.push(todo);
+    localStorage.setItem("todos", JSON.stringify(todosList));
+};
+
