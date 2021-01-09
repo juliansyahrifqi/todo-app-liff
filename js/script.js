@@ -57,9 +57,11 @@ todoList.addEventListener('click', (e) => {
 
     if(element.classList[0] === "delete-btn") {
         todoItem.classList.toggle("deleted");
+        removeTodo(todoItem);
 
         todoItem.addEventListener('transitionend', () => {
             todoItem.remove();
+           
         });
     }
 
@@ -122,6 +124,20 @@ const loadTodoList = () => {
         todoItem.appendChild(deleteButton);
 
     });
+}
+
+const removeTodo = (todo) => {
+    let todosList;
+
+    if(localStorage.getItem('todos') === null) {
+        todosList = [];
+    } else {
+        todosList = JSON.parse(localStorage.getItem("todos"));
+    }
+
+    const todoElement = todo.children[0].innerText;
+    todosList.splice(todosList.indexOf(todoElement), 1);
+    localStorage.setItem("todos", JSON.stringify(todosList));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
