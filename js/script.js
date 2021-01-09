@@ -88,3 +88,43 @@ const saveTodo = (todo) => {
     localStorage.setItem("todos", JSON.stringify(todosList));
 };
 
+const loadTodoList = () => {
+    let todosList;
+
+    if(localStorage.getItem('todos') === null) {
+        todosList = [];
+    } else {
+        todosList = JSON.parse(localStorage.getItem("todos"));
+    }
+
+    todosList.forEach((todo) => {
+        //Create div todo-item
+        const todoItem = document.createElement('div');
+        todoItem.classList.add("todo-item");
+        todoList.appendChild(todoItem);
+
+        // Create list todo
+        const newTodoItem = document.createElement("li");
+        newTodoItem.innerHTML = todo;
+        todoItem.appendChild(newTodoItem);
+
+        // Create completed button
+        const completedButton = document.createElement("button");
+        completedButton.classList.add("completed-btn");
+        completedButton.innerHTML = "Completed";
+
+        todoItem.appendChild(completedButton);
+
+        // Create delete button
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("delete-btn");
+        deleteButton.innerHTML = "Delete";
+        todoItem.appendChild(deleteButton);
+
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadTodoList();
+});
+
