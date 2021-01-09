@@ -89,6 +89,7 @@ header {
     background: -webkit-linear-gradient(120deg, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(120deg, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     color: #f7f7f7;
+    transition: all 0.6s ease-out;
 }
 
 .todo-item li {
@@ -114,6 +115,15 @@ header {
 
 .delete-btn {
     background-color: #d9534f;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.deleted {
+    opacity: 0;
 }
 
 
