@@ -124,9 +124,12 @@ function registerButtonHandlers() {
         } else {
             let todosList = [];
 
-            // todos.forEach((todo) => {
-            //     todosList.push(todo);
-            // })
+            // Get todo from local storage
+            let todos = JSON.parse(localStorage.getItem("todos"));
+
+            todos.forEach((todo) => {
+                todosList.push(todo);
+            })
 
             if(todosList.length == 0) {
                 window.alert("Todo list anda masih kosong!");
