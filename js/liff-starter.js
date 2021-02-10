@@ -92,7 +92,7 @@ function displayIsInClientInfo() {
 function registerButtonHandlers() {
     document.getElementById('openWindowButton').addEventListener('click', function() {
         liff.openWindow({
-            url: 'https://example.herokuapp.com/', // Isi dengan Endpoint URL aplikasi web Anda
+            url: 'https://todoliffapp.herokuapp.com/', // Isi dengan Endpoint URL aplikasi web Anda
             external: true
         });
     });
@@ -128,7 +128,7 @@ function registerButtonHandlers() {
                 todosList.push(todo);
             })
 
-            if(todosList.length === 0) {
+            if(todosList.length == 0) {
                 window.alert("Todo list anda masih kosong!");
             } else {
                 liff.sendMessages([{
