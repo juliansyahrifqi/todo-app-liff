@@ -122,26 +122,27 @@ function registerButtonHandlers() {
         if (!liff.isInClient()) {
             sendAlertIfNotInClient();
         } else {
-            let todosList = [];
+            // let todosList = [];
 
-            todos.forEach((todo) => {
-                todosList.push(todo);
-            })
+            // todos.forEach((todo) => {
+            //     todosList.push(todo);
+            // })
 
-            if(todosList.length == 0) {
-                window.alert("Todo list anda masih kosong!");
-            } else {
-                liff.sendMessages([{
-                    'type': 'text',
-                    'text': `Todo list hari ini adalah \n\n- ${todosList.join('\n- ')}`
-                }]).then(function() {
-                    window.alert('Pesan berhasil dikirim!');
-                    window.location.reload();
-                }).catch(function(error) {
-                    window.alert('Pesan gagal dikirim: ' + error);
-                    window.location.reload();
-                });
-            }   
+            // if(todosList.length == 0) {
+            //     window.alert("Todo list anda masih kosong!");
+            // } else {
+            //     liff.sendMessages([{
+            //         'type': 'text',
+            //         'text': `Todo list hari ini adalah \n\n- ${todosList.join('\n- ')}`
+            //     }]).then(function() {
+            //         window.alert('Pesan berhasil dikirim!');
+            //         window.location.reload();
+            //     }).catch(function(error) {
+            //         window.alert('Pesan gagal dikirim: ' + error);
+            //         window.location.reload();
+            //     });
+            // }   
+            window.alert('test');
         }
     });
 }
